@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pawsitive Vibes</title>
+    <style>
+        body {
+            background-color: #8B4513;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #A0522D;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+            width: 350px;
+            text-align: center;
+        }
+        h1 {
+            color: #FFD700;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background: #FFD700;
+            color: #8B4513;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            margin-top: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #FFA500;
+        }
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <p id="message" class="message"></p>
+
+        <form id="loginForm">
+            <label>Name:</label>
+            <input type="text" id="login_name" required>
+
+            <label>Password:</label>
+            <input type="password" id="login_password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p>New user? <a href="register.html">Register</a></p>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let loginName = document.getElementById("login_name").value;
+            let loginPassword = document.getElementById("login_password").value;
+            let messageElement = document.getElementById("message");
+
+            // Retrieve stored user data
+            let storedUser = localStorage.getItem("user");
+
+            if (!storedUser) {
+                messageElement.innerHTML = "❌ No registered user found. Please register first!";
+                messageElement.classList.add("error");
+                return;
+            }
+
+            let userData = JSON.parse(storedUser);
+
+            // Check if credentials match
+            if (loginName === userData.name && loginPassword === userData.password) {
+                messageElement.innerHTML = "✅ Login successful! Redirecting...";
+                messageElement.classList.add("success");
+
+                // Redirect to dashboard or home page after 2 seconds
+                setTimeout(() => {
+                    window.location.href = "home.html"; // Change this to your actual dashboard page
+                }, 2000);
+            } else {
+                messageElement.innerHTML = "❌ Invalid name or password. Try again!";
+                messageElement.classList.add("error");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Pawsitive Vibes</title>
+    <style>
+        body {
+            background-color: #D2B48C; /* Light brown */
+            text-align: center;
+            font-family: "Arial", sans-serif;
+            position: relative;
+        }
+        h1, h2 {
+            text-align: center;
+            font-family: "Georgia", serif;
+        }
+        .highlight-text {
+            font-weight: bold;
+            font-style: italic;
+            font-size: 22px;
+            color: #8B4513; /* Dark Brown */
+        }
+        .logout-button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 25px;
+            border-radius: 50%;
+            background-color: #8B4513; /* Brown */
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .logout-button:hover {
+            background-color: #A0522D;
+        }
+        .puppy-img {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        a {
+            font-size: 18px;
+            font-weight: bold;
+            color: #5A2D0C;
+            text-decoration: none;
+            margin: 10px;
+        }
+        a:hover {
+            color: #A0522D;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Pawsitive Vibes</h1>
+    <img src="pets.jpg" alt="Cute Puppy and Other Animals" class="puppy-img">
+    <p class="highlight-text">Your one-stop destination for pet adoption, rescue, and medical assistance.</p>
+    
+    <h2>About Me</h2>
+    <p><strong>Name:</strong> Praneetha A.S</p>
+    <p><strong>Registration No:</strong> 2023002576</p>
+    
+    <!-- Resume Link -->
+    <p><strong>Resume:</strong> 
+        <a href="resume.pdf" target="_blank">View Resume</a>
+    </p>
+    
+    <a href="register.html">Register</a> | <a href="loginn.html">Login</a>
+    <br><br>
+    <a href="adopt.html">Adopt a Pet</a>
+    <br><br>
+    
+    <button class="logout-button" onclick="logout()">Logout</button>
+    
+    <script>
+        function logout() {
+            window.location.href = 'exit.html';
+        }
+    </script>
+</body>
+</html>

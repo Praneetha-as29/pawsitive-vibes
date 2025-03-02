@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Pawsitive Vibes</title>
+    <style>
+        body {
+            background-color: #8B4513;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #A0522D;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+            width: 350px;
+            text-align: center;
+        }
+        h1 {
+            color: #FFD700;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background: #FFD700;
+            color: #8B4513;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            margin-top: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #FFA500;
+        }
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <p id="message" class="message"></p>
+
+        <form id="registerForm">
+            <label>Name:</label>
+            <input type="text" id="name" required>
+
+            <label>Department:</label>
+            <input type="text" id="department" required>
+
+            <label>Year:</label>
+            <input type="number" id="year" required>
+
+            <label>Section:</label>
+            <input type="text" id="section" required>
+
+            <label>Password:</label>
+            <input type="password" id="password" required>
+
+            <label>Confirm Password:</label>
+            <input type="password" id="confirm_password" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p>Already a user? <a href="login.html">Login</a></p>
+    </div>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let department = document.getElementById("department").value;
+            let year = document.getElementById("year").value;
+            let section = document.getElementById("section").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirm_password").value;
+            let messageElement = document.getElementById("message");
+
+            if (password !== confirmPassword) {
+                messageElement.innerHTML = "❌ Passwords do not match!";
+                messageElement.classList.add("error");
+                return;
+            }
+
+            // Store user data in localStorage
+            let userData = { name, department, year, section, password };
+            localStorage.setItem("user", JSON.stringify(userData));
+
+            // Show success message
+            messageElement.innerHTML = "✅ Registration successful! Redirecting...";
+            messageElement.classList.add("success");
+
+            // Redirect to login page after 2 seconds
+            setTimeout(() => {
+                window.location.href = "loginn.html";
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

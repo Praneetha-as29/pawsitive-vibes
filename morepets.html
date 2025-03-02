@@ -1,0 +1,145 @@
+<!-- more_pets.html (More Pets for Adoption) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Pets - Pawsitive Vibes</title>
+    <style>
+        body {
+            background: url('pet3.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h2 {
+            color: #8B4513;
+            font-size: 32px;
+            margin-top: 20px;
+        }
+        .pet-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .pet-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            width: 250px;
+            text-align: center;
+        }
+        .pet-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .adopt-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #8B4513;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .adopt-btn:hover {
+            background-color: #A0522D;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            width: 50%;
+            margin: 30px auto;
+            text-align: left;
+        }
+        form label {
+            font-weight: bold;
+            color: #5A2D0C;
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input, form select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #8B4513;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        form input[type="submit"] {
+            background-color: #8B4513;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            padding: 10px;
+        }
+        form input[type="submit"]:hover {
+            background-color: #A0522D;
+        }
+        .home-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            border-radius: 5px;
+            background-color: #8B4513;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .home-button:hover {
+            background-color: #A0522D;
+        }
+        #other-pet-fields {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>More Pets for Adoption</h2>
+    <div class="pet-grid">
+        <div class="pet-card">
+            <img src="a3.jpeg" alt="Rocky">
+            <h3>Rocky</h3>
+            <p>Friendly and energetic cat looking for a home.</p>
+        </div>
+        <div class="pet-card">
+            <img src="a6.jpeg" alt="Daisy">
+            <h3>Daisy</h3>
+            <p>Sweet dog that loves cuddles and playtime.</p>
+        </div>
+        <div class="pet-card">
+            <img src="a10.jpeg" alt="Buddy">
+            <h3>Buddy</h3>
+            <p>Gentle fish that just loves it's little aquarium.</p>
+        </div>
+        <div class="pet-card">
+            <img src="a12.jpeg" alt="Milo">
+            <h3>Milo</h3>
+            <p>Curious and playful rabbit full of love.</p>
+        </div>
+        <div class="pet-card">
+            <img src="a13.jpeg" alt="Bella">
+            <h3>Bella</h3>
+            <p>A smart parrot ready for training and fun.</p>
+        </div>
+        <div class="pet-card">
+            <img src="a14.jpeg" alt="Shadow">
+            <h3>Shadow</h3>
+            <p>Small yet cute,loving hamster looking for a home.</p>
+        </div>
+    </div>
+
+    <a href="adopt.html" class="home-button">⬅ Back to Adoption Page</a>
+    <a href="index.html" class="home-button">🏠 Home</a>
+
+</body>
+</html>
